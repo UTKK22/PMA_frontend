@@ -1,0 +1,108 @@
+/* Container for the login component */
+.loginContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+/* Header styling for the login title */
+.Loginheaders {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: black;
+    margin-bottom: 50px;
+}
+
+/* Form layout for the login */
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input field wrapper */
+.inputGroup {
+    margin: 10px 0;
+    position: relative;
+}
+
+/* General styles for input fields */
+.inputGroup input {
+    width: 403px;
+    height: 55px;
+    border: 1.38px solid #d0d0d0;
+    border-radius: 11px;
+    padding-left: 4rem; /* Adjusted for consistency */
+    font-size: 19px;
+}
+
+/* Icon styling for input fields */
+.icon {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+/* Toggle icon for password visibility */
+.toggler {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Adjusted for better alignment */
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Error message styling */
+.errorMessage {
+    color: #f00;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    margin: 0 0 0 5px;
+    position: relative;
+    bottom: 10px;
+}
+
+/* Submit button styling */
+.submitButton {
+    width: 403px;
+    height: 55px;
+    background-color: #17a2b8;
+    border-radius: 40px;
+    color: #fff;
+    border: none; /* Removed border to simplify */
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+/* Text below the login form */
+.redirectText {
+    color: #828282;
+    margin: 30px 0; /* Combined margin for simplicity */
+}
+
+/* Register button styling */
+.registerButton {
+    width: 403px;
+    height: 55px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: 1.38px solid #17a2b8;
+    color: #17a2b8;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}

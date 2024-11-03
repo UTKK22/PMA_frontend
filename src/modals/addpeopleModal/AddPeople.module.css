@@ -1,0 +1,86 @@
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modalContainer {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-left: 15px;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+
+.emailinput {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 40px;
+  border: 2px solid rgba(118, 117, 117, 1);
+  border-radius: 16px;
+  font-family: Noto Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  padding-left: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.addButton,
+.cancelButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addButton {
+  font-family: "Poppins";
+  font-weight: 600;
+  background-color: rgba(23, 162, 184, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 2px solid #17a2b8;
+  border-radius: 16px;
+  box-shadow: 0px 2px 12px 0px rgba(130, 105, 140, 0.2);
+  width: 18vw;
+}
+
+.cancelButton {
+  border: 1px solid rgba(207, 54, 54, 1);
+  box-shadow: 0px 2px 12px 0px rgba(130, 105, 140, 0.2);
+  color: rgba(207, 54, 54, 1);
+  font-family: "Poppins";
+  font-weight: 600;
+  border-radius: 16px;
+  width: 18vw;
+}

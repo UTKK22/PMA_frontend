@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+
+.header img {
+  margin-right: 10px;
+}
+.prior {
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 450;
+  line-height: 10px;
+  text-align: left;
+  color: rgba(112, 112, 112, 1);
+  
+}
+.container {
+  max-width: 600px;
+  max-height: 500px;
+  margin: 80px auto 20px;
+  padding: 20px;
+  border: 3px solid rgba(237, 245, 254, 1);
+  border-radius: 19px;
+}
+.container h2 {
+  margin-top: 25px;
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 33px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+.checklistContainer {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.checklistContainer h4 {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  font-weight: 300;
+}
+ul {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 2px solid rgba(226, 226, 226, 1);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.customCheckbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkboxIndicator {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(226, 226, 226, 1);
+  border-radius: 5px;
+  margin-right: 10px;
+  position: relative;
+  background-color: white;
+}
+
+.customCheckbox input[type="checkbox"]:checked + .checkboxIndicator {
+  background-color: rgba(23, 162, 184, 1);
+  border: 2px solid rgba(23, 162, 184, 1);
+  border-radius: 6px;
+}
+
+.checkboxIndicator::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.duedate {
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: rgba(207, 54, 54, 1);
+  border: 1px solid rgba(207, 54, 54, 1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 1);
+  padding: 7px;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  .checklistContainer {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  .checklistContainer {
+    padding: 8px;
+  }
+}

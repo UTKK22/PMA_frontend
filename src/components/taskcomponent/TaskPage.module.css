@@ -1,0 +1,103 @@
+.TaskPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.TaskCard {
+    width: 654px;
+    padding: 62px 33px; /* Fixed padding syntax */
+    border-radius: 12px;
+    border: 2px solid #edf5fe;
+    background-color: #fff;
+}
+
+.TaskCard h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    margin: 0 0 20px; /* Combined margins */
+}
+
+.TaskCard h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.TaskCheckList {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.TaskCard ul {
+    padding-left: 0;
+    margin-top: 0;
+    height: 30vh;
+    overflow-y: auto; /* Changed scroll to auto for better UX */
+    width: 100%;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #9cb7c5;
+}
+
+.TaskCard li {
+    width: 90%;
+    height: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #e2e2e2;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.Checklist {
+    margin-right: 10px;
+}
+
+.Track {
+    display: flex;
+}
+
+.dueDate {
+    width: 52px;
+    height: 22px;
+    border-radius: 8px;
+    background-color: #007BFF; /* Example color for visibility */
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 2px;
+    left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .TaskCard {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 30px; /* Reduce padding */
+    }
+}

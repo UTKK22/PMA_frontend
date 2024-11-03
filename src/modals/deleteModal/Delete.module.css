@@ -1,0 +1,94 @@
+.modalBackground {
+  /* width: 100vw;
+    height: 100vh;
+    background: rgba(47, 47, 47, 0.75); 
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; */
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.65);;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modalContainer {
+  width: 335.19px;
+  height: 200px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+}
+
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.title h1 {
+  font-size: 19px;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modalContainer .footer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer .footer button {
+  width: 20vw;
+  height: 45px;
+  margin: 10px;
+  border-radius: 18px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background-color: transparent;
+  color: #17a2b8;
+  border: 2px solid #17a2b8;
+}
+
+.deleteButton:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.cancelButton {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background-color: transparent;
+  color: #cf3636;
+  border: 2px solid #cf3636;
+}
+
+.cancelButton:hover {
+  background-color: #cf3636;
+  color: #fff;
+}

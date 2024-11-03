@@ -1,0 +1,171 @@
+.modalBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  z-index: 1;
+}
+
+.modalContainer {
+  width: 600px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin: 10px 0 5px;
+}
+.label::after{
+    content: ' *';
+    color: #cf3636;
+}
+.inputField {
+  border: 1px solid rgba(226, 226, 226, 1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 2px 0px rgba(77, 64, 85, 0.1);
+  border-radius: 5px;
+  color: rgba(155, 149, 159, 1);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding-left: 10px;
+  height: 40px;
+}
+
+.priorityContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.priorityButton {
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.checklistArea {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.checklistItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.taskInput {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.addButton {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.datePicker {
+  margin: 10px 0;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cancelButton,
+.saveButton {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.cancelButton {
+  background-color: #cf3636;
+  color: white;
+}
+
+.saveButton {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.saveButton:hover,
+.cancelButton:hover {
+  opacity: 0.8;
+}
+.assigneeContainer {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.assigneeInput {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.assigneeField {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.arrow {
+  margin-left: 10px;
+}
+
+.dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background: #f0f0f0;
+}

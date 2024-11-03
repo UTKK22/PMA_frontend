@@ -1,0 +1,112 @@
+:root {
+  --primary-bg: #fff;
+  --hover-bg: #4391ed1a;
+  --logout-color: #cf3636;
+  --sidebar-width: 15%;
+  --spacing: 20px;
+}
+
+.SideNavContainer {
+  background-color: var(--primary-bg);
+  height: 100vh;
+  width: var(--sidebar-width);
+  border-right: 1px solid #edf5fe;
+  transition: width 0.3s ease; /* Smooth transition for width changes */
+}
+
+.logout,
+.SideNavHeaders {
+  margin-top: var(--spacing);
+}
+.SideNavHeaders{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.SideNavHeaders .logo {
+  margin-right: 12px;
+}
+.text {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.logout,
+.SideNavButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logout {
+  position: absolute;
+  bottom: 0;
+  width: var(--sidebar-width);
+  left: 30px;
+}
+.navButton {
+  display: flex;
+  align-items: center;
+  height: 50px;
+
+}
+
+
+.navButton.active{
+    background-color: rgba(67, 145, 237, 0.1); 
+}
+.navButton {
+  background-color: rgba(255, 255, 255, 1);
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  font-family: Poppins;
+  padding: 10px;
+  cursor: pointer;
+}
+.LogoutNavBtn {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: var(--spacing);
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.Headicon {
+  position: relative;
+  left: 22px;
+}
+
+
+
+.LogoutNavBtn img {
+  margin-right: 10px;
+}
+
+.LogoutNavBtn span {
+  position: relative;
+  bottom: 5px;
+}
+
+.LogoutNavBtn span {
+  color: var(--logout-color);
+}
+.labels {
+  margin-left: 35px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .SideNavContainer {
+    width: 60%; /* Adjust for smaller screens */
+  }
+}

@@ -1,0 +1,101 @@
+.RegisterContainer {
+    height: 100vh;
+    display: flex;
+    width: 100%; /* Changed to full width for better responsiveness */
+    max-width: 600px; /* Max width to ensure it doesn't get too wide */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+}
+
+.RegisterHeader {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 45px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.RegisterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width */
+}
+
+.userInput {
+    margin: 10px 0;
+    position: relative;
+    width: 100%; /* Full width for input fields */
+}
+
+.userInput input {
+    width: 100%; /* Full width */
+    max-width: 403px; /* Max width */
+    height: 55px;
+    border: 1.38px solid #d0d0d0;
+    border-radius: 11px;
+    padding-left: 4rem; /* Adjusted for icon space */
+    font-size: 19px;
+}
+
+.ToggleIcon, .inputIcon {
+    width: 28px; /* Simplified icon size */
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ToggleIcon {
+    right: 6%;
+    cursor: pointer;
+}
+
+.inputIcon {
+    left: 20px;
+}
+
+.errormessage {
+    color: #f00;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    margin-top: 5px; /* Slight margin for better spacing */
+}
+
+.submitButton {
+    width: 100%; /* Full width */
+    max-width: 403px; /* Max width */
+    height: 55px;
+    background-color: #17a2b8;
+    border-radius: 40px;
+    color: #fff;
+    border: none; /* Removed border for cleaner look */
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+.posttext {
+    color: #828282;
+    margin: 30px 0; /* Unified margin */
+}
+
+.loginButton{
+    width: 100%; /* Full width */
+    max-width: 403px; /* Max width */
+    height: 55px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: 1.38px solid #17a2b8;
+    color: #17a2b8;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
