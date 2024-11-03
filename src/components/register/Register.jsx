@@ -56,7 +56,7 @@ const RegisterForm = () => {
         }
         
         try {
-            const response = await axios.post('http://localhost:4000/api/users/signup', formData);
+            const response = await axios.post('https://pma-backend-psi.vercel.app//api/users/signup', formData);
             console.log("response in register",response)
             Cookies.set("token",response.data.token)
             localStorage.setItem('name', (response.data.name));

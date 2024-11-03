@@ -30,11 +30,11 @@ const TaskModal = ({ closeModal }) => {
     const fetchAssignees = async () => {
       try {
         const usersResponse = await axios.get(
-          "http://localhost:4000/api/users/assignees"
+          "https://pma-backend-psi.vercel.app/api/users/assignees"
         );
         console.log("userresponse", usersResponse);
         const peopleResponse = await axios.get(
-          "http://localhost:4000/api/people/emails"
+          "https://pma-backend-psi.vercel.app/api/people/emails"
         );
         console.log("peoplerespnse", peopleResponse);
         const combinedAssignees = [
@@ -72,7 +72,7 @@ const TaskModal = ({ closeModal }) => {
         },
       };
       await axios.post(
-        "http://localhost:4000/api/tasks/create_tasks",
+        "https://pma-backend-psi.vercel.app/api/tasks/create_tasks",
         {
           ...formData,
           checklist: checkItems,

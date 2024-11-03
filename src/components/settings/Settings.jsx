@@ -176,7 +176,7 @@ const Settings = () => {
         }
     
         try {
-            const response = await axios.put('http://localhost:4000/api/users/update-settings', updateData, {
+            const response = await axios.put('https://pma-backend-psi.vercel.app/api/users/update-settings', updateData, {
                 headers: { 
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${Cookies.get('token')}`
