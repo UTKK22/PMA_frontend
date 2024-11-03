@@ -21,7 +21,7 @@ const EditsModal = ({ closeModal, taskId }) => {
         const fetchTaskDetails = async () => {
             try {
                 const response = await axios.get(
-                    `https://pma-backend-psi.vercel.app/api/tasks/fetch_tasksbyid/${taskId}`
+                    `https://pma-backend-psi.vercel.app//api/tasks/fetch_tasksbyid/${taskId}`
                 );
                 setTaskDetails(response.data);
                 setFormFields(response.data);
@@ -65,7 +65,7 @@ const EditsModal = ({ closeModal, taskId }) => {
             }
 
             await axios.put(
-                `https://pma-backend-psi.vercel.app/api/tasks/edit_task/${taskId}`,
+                `https://pma-backend-psi.vercel.app//api/tasks/edit_task/${taskId}`,
                 formFields,
                 config
             );

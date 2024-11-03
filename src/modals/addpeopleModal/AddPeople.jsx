@@ -12,7 +12,7 @@ const AddPeople = ({ closeModal }) => {
 
         try {
             const token = Cookies.get("token");
-            await axios.post('https://pma-backend-psi.vercel.app/api/people/add', { email }, {
+            await axios.post('https://pma-backend-psi.vercel.app//api/people/add', { email }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
