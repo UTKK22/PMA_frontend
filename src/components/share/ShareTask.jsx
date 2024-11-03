@@ -8,7 +8,7 @@ import moment from "moment";
 import greendot from "../../assets/GreenDot.png";
 import bluedot from "../../assets/Bluedot.png";
 import reddot from "../../assets/Reddot.png";
-import logo from "../../assets/Codesandbox.png";
+import logo from "../../assets/codesandbox.png";
 const ShareTask = () => {
   const { id } = useParams();
   const [task, setTask] = useState(null);

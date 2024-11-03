@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../navigation/SideNavigation.module.css';
 import LogoutModal from '../../modals/logoutmodal/Logout';
-import Logo from '../../assets/Codesandbox.png';
+import Logo from '../../assets/codesandbox.png';
 import DatabaseIcon from '../../assets/Database.png';
 import BoardIcon from '../../assets/Layout.png';
 import SettingsIcon from '../../assets/Settings.png';
