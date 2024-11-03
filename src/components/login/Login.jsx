@@ -44,9 +44,10 @@ const Login = () => {
             localStorage.setItem('id',id)
             Cookies.set("token",token);
             displayToast('Login Successful', true);
-            navigate('/dashboard'); // Redirect after successful login
+            navigate('/dashboard'); 
         } catch (err) {
-            console.error('Error during login:', err.response ? err.response.data : err.message);
+            console.log({err})
+            console.log("hello there")
             displayToast('Login Failed: ' + (err.response?.data?.message || 'Server Error'), false);
         }
     };
