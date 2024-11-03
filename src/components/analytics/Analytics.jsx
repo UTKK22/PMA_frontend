@@ -16,7 +16,7 @@ const Analytics = () => {
       };
       const id=localStorage.getItem("id");
       const response = await axios.get(
-        `https://pma-backend-psi.vercel.app//api/tasks/fetchalltasks?id=${id}`,
+        `https://pma-backend-psi.vercel.app/api/tasks/fetchalltasks?id=${id}`,
         config
       );
       console.log("Analytics",response.data)

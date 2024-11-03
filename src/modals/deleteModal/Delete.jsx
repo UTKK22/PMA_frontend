@@ -15,7 +15,7 @@ const DeleteModal = ({ closeModal, taskId }) => {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `https://pma-backend-psi.vercel.app//api/tasks/delete_task/${taskId}`,
+                `https://pma-backend-psi.vercel.app/api/tasks/delete_task/${taskId}`,
                 config
             );
             console.log('Task successfully deleted:', response.data);

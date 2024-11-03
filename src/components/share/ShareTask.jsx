@@ -26,7 +26,7 @@ const ShareTask = () => {
 
       try {
         const response = await axios.get(
-          `https://pma-backend-psi.vercel.app//api/tasks/fetch_tasksbyid/${id}`,
+          `https://pma-backend-psi.vercel.app/api/tasks/fetch_tasksbyid/${id}`,
           config
         );
         setTask(response.data);
