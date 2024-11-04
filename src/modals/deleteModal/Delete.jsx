@@ -15,7 +15,7 @@ const DeleteModal = ({ closeModal, taskId }) => {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `http://localhost:4000/api/tasks/delete_task/${taskId}`,
+                `https://pma-backend-4yqr.onrender.com/api/tasks/delete_task/${taskId}`,
                 config
             );
             console.log('Task successfully deleted:', response.data);

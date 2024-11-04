@@ -676,10 +676,10 @@ const TaskModal = ({ closeModal }) => {
     const fetchAssignees = async () => {
       try {
         const usersResponse = await axios.get(
-          "http://localhost:4000/api/users/assignees"
+          "https://pma-backend-4yqr.onrender.com/api/users/assignees"
         );
         const peopleResponse = await axios.get(
-          "http://localhost:4000/api/people/emails"
+          "https://pma-backend-4yqr.onrender.com/api/people/emails"
         );
         const combinedAssignees = [
           ...usersResponse.data,
@@ -716,7 +716,7 @@ const TaskModal = ({ closeModal }) => {
         },
       };
       await axios.post(
-        "http://localhost:4000/api/tasks/create_tasks",
+        "https://pma-backend-4yqr.onrender.com/api/tasks/create_tasks",
         {
           ...formData,
           checklist: checkItems,

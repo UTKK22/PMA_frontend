@@ -16,7 +16,7 @@ const Analytics = () => {
       };
       const id=localStorage.getItem("id");
       const response = await axios.get(
-        `http://localhost:4000/api/tasks/fetchalltasks?id=${id}`,
+        `https://pma-backend-4yqr.onrender.com/api/tasks/fetchalltasks?id=${id}`,
         config
       );
       console.log("Analytics",response.data)

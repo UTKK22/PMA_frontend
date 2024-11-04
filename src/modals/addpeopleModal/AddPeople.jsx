@@ -12,7 +12,7 @@ const AddPeople = ({ closeModal }) => {
 
         try {
             const token = Cookies.get("token");
-            await axios.post('http://localhost:4000/api/people/add', { email }, {
+            await axios.post('https://pma-backend-4yqr.onrender.com/api/people/add', { email }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

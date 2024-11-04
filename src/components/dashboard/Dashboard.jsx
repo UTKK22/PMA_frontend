@@ -97,7 +97,7 @@ const DashBoard = () => {
 
   //     try {
   //       const response = await axios.get(
-  //         "http://localhost:4000/api/tasks/fetchalltasks",
+  //         "https://pma-backend-4yqr.onrender.com/api/tasks/fetchalltasks",
   //         config
   //       );
   //       const tasksItems = response.data;
@@ -138,7 +138,7 @@ const DashBoard = () => {
   //   }
   //   try {
   //     const response = await axios.put(
-  //       `http://localhost:4000/api/tasks/update_task/state/${taskId}`,
+  //       `https://pma-backend-4yqr.onrender.com/api/tasks/update_task/state/${taskId}`,
   //        updatedTask,
   //       // { status: newTaskState },
   //       config
@@ -176,7 +176,7 @@ const DashBoard = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/tasks/update_task/state/${taskId}`,
+        `https://pma-backend-4yqr.onrender.com/api/tasks/update_task/state/${taskId}`,
         updatedTask,
         config
       );
@@ -204,7 +204,7 @@ const DashBoard = () => {
         };
 
         const response = await axios.get(
-          `http://localhost:4000/api/tasks/filter?filter=${initialFilter}`,
+          `https://pma-backend-4yqr.onrender.com/api/tasks/filter?filter=${initialFilter}`,
           config
         );
 
@@ -228,7 +228,7 @@ const DashBoard = () => {
     };
     console.log(config);
     axios
-      .get(`http://localhost:4000/api/tasks/filter?filter=${newFilter}`, config)
+      .get(`https://pma-backend-4yqr.onrender.com/api/tasks/filter?filter=${newFilter}`, config)
       .then((res) => {
         console.log(res.data, "filter");
         setTasks(res.data);
@@ -286,7 +286,7 @@ const DashBoard = () => {
           return task;
         });
       });
-      const url = `http://localhost:4000/api/tasks/${taskId}/checklists/${checklistId}`;
+      const url = `https://pma-backend-4yqr.onrender.com/api/tasks/${taskId}/checklists/${checklistId}`;
 
       const updatedChecklist={ischeck: !ischecked}
 
