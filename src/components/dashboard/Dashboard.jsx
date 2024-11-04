@@ -15,6 +15,7 @@ import EditModal from "../../modals/editModal/Edit";
 import AddPeople from "../../modals/addpeopleModal/AddPeople";
 import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
+axios.defaults.withCredentials = true;
 const DashBoard = () => {
   const [tasks, setTasks] = useState([]);
   const [checklist, setChecklist] = useState([]);

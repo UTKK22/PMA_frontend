@@ -9,6 +9,7 @@ import greendot from "../../assets/GreenDot.png";
 import bluedot from "../../assets/Bluedot.png";
 import reddot from "../../assets/Reddot.png";
 import logo from "../../assets/codesandbox.png";
+axios.defaults.withCredentials = true;
 const ShareTask = () => {
   const { id } = useParams();
   const [task, setTask] = useState(null);

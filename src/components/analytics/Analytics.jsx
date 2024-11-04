@@ -3,6 +3,7 @@ import styles from "../analytics/Analytics.module.css";
 import axios from "axios";
 import bluedot from "../../assets/Bluedot.png";
 import Cookies from "js-cookie";
+axios.defaults.withCredentials = true;
 const Analytics = () => {
   const [taskList, setTaskList] = useState([]);
 

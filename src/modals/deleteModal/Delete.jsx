@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../deleteModal/Delete.module.css';
 import axios from 'axios';
 import Cookies from 'js-cookie'
+axios.defaults.withCredentials = true;
 const DeleteModal = ({ closeModal, taskId }) => {
     // Axios configuration for API calls
     const config = {

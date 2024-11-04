@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../addpeopleModal/AddPeople.module.css';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-
+axios.defaults.withCredentials = true;
 const AddPeople = ({ closeModal }) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState(null);

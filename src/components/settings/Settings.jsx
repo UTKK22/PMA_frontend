@@ -6,7 +6,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
-
+axios.defaults.withCredentials = true;
 const Settings = () => {
     const [userInfo, setUserInfo] = useState({
         name: '',

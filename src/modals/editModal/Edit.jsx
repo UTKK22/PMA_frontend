@@ -4,7 +4,7 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import DeleteIcon from '../../assets/Delete.png';
-
+axios.defaults.withCredentials = true;
 const EditsModal = ({ closeModal, taskId }) => {
     const [taskDetails, setTaskDetails] = useState(null);
     const [formFields, setFormFields] = useState({
