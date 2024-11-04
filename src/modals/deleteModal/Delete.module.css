@@ -22,8 +22,8 @@
 }
 
 .modalContainer {
-  width: 335.19px;
-  height: 200px;
+  width: 370px;
+  height: 220px;
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -40,7 +40,7 @@
 }
 
 .title h1 {
-  font-size: 19px;
+  font-size: 15px;
 }
 
 .titleCloseBtn button {
@@ -56,6 +56,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .modalContainer .footer button {
@@ -70,14 +71,14 @@
 .deleteButton {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  background-color: transparent;
-  color: #17a2b8;
+  background-color: #17a2b8;
+  color:white;
   border: 2px solid #17a2b8;
 }
 
 .deleteButton:hover {
-  background-color: #17a2b8;
-  color: #fff;
+  border:3px solid  black;
+  color: white;
 }
 
 .cancelButton {
@@ -89,6 +90,6 @@
 }
 
 .cancelButton:hover {
-  background-color: #cf3636;
-  color: #fff;
+  border:3px solid  black;
+  color:#cf3636 ;
 }

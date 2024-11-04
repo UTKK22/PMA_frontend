@@ -15,7 +15,7 @@ const DeleteModal = ({ closeModal, taskId }) => {
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `https://pma-backend-lac.vercel.app/api/tasks/delete_task/${taskId}`,
+                `http://localhost:4000/api/tasks/delete_task/${taskId}`,
                 config
             );
             console.log('Task successfully deleted:', response.data);
@@ -30,7 +30,7 @@ const DeleteModal = ({ closeModal, taskId }) => {
         <div className={styles.modalBackground}>
             <div className={styles.modalContainer}>
                 <div className={styles.title}>
-                    <h1>Are you certain you want to delete this task?</h1>
+                    <h1>Are you sure you want to Delete?</h1>
                 </div>
                 <div className={styles.footer}>
                     <button className={styles.deleteButton} onClick={handleDelete}>

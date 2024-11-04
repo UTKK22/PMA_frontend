@@ -10,7 +10,7 @@
 }
 
 .modalContainer {
-  width: 600px;
+  width: 700px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -25,9 +25,13 @@
 .label {
   margin: 10px 0 5px;
 }
-.label::after{
-    content: ' *';
-    color: #cf3636;
+.label::after {
+  content: " *";
+  color: #cf3636;
+}
+.assigneelabel {
+  margin: 10px 0 10px;
+  width: 15%;
 }
 .inputField {
   border: 1px solid rgba(226, 226, 226, 1);
@@ -58,6 +62,53 @@
   border-radius: 8px;
   background-color: #f0f0f0;
   cursor: pointer;
+}
+.priorityContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  font-family: "Poppins";
+}
+
+.priorityButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.priorityButton {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(226, 226, 226, 1);
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.priorityButton:hover {
+  background-color: rgba(238, 236, 236, 1);
+}
+
+.colorIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.priorityButton[data-selected="true"] {
+  background-color: rgba(238, 236, 236, 1);
 }
 
 .checklistArea {
@@ -94,18 +145,31 @@
 
 .footer {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-
 .datePicker {
-  margin: 10px 0;
+  margin-right: 10px;
+  flex: 1;
+  border: 1px solid rgba(226, 226, 226, 1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 2px 0px rgba(77, 64, 85, 0.1);
+  border-radius: 5px;
+  color: rgba(155, 149, 159, 1);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding-left: 10px;
+  height: 40px;
 }
 
 .buttonGroup {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  gap: 10px;
 }
 
 .cancelButton,
@@ -114,16 +178,20 @@
   border-radius: 8px;
   cursor: pointer;
   border: none;
+  margin-left: 20px;
 }
 
 .cancelButton {
-  background-color: #cf3636;
-  color: white;
+  background-color: white;
+  color: #cf3636;
+  border: 2px solid #cf3636;
+  width: 120px;
 }
 
 .saveButton {
   background-color: #17a2b8;
   color: white;
+  width: 120px;
 }
 
 .saveButton:hover,
@@ -134,11 +202,29 @@
   position: relative;
   margin-bottom: 20px;
 }
+.assigneeLabelInputContainer {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
 
 .assigneeInput {
   display: flex;
   align-items: center;
   cursor: pointer;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 2px 0px rgba(77, 64, 85, 0.1);
+  border-radius: 5px;
+  color: rgba(155, 149, 159, 1);
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  height: 40px;
 }
 
 .assigneeField {
@@ -157,7 +243,8 @@
   background: white;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
+  width: 87%;
+  margin-left: 13%;
   z-index: 1000;
 }
 
@@ -168,4 +255,94 @@
 
 .dropdownItem:hover {
   background: #f0f0f0;
+}
+.assigneeContainer {
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.assigneeInput {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.assigneeField {
+  flex-grow: 1;
+  padding: 10px;
+  padding-right: 30px; /* Add padding to the right for the arrow */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: inline;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* .dropdownItem:hover {
+  background-color: #f9f9f9;
+} */
+
+.emailInitials {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 235, 235, 1);
+  color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: DM Sans;
+}
+
+.emailText {
+  flex-grow: 1;
+  margin-left: 5%;
+}
+
+.assignButton {
+  background-color: white;
+  color: rgba(118, 117, 117, 1);
+  border: 1px solid rgba(226, 226, 226, 1);
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 400;
+  width: 20%;
+}
+
+.assignButton:hover {
+  background-color: lightgray;
 }

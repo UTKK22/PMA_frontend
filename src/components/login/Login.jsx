@@ -37,7 +37,7 @@ const Login = () => {
         }
 
         try {
-            const response = await axios.post('https://pma-backend-lac.vercel.app/api/users/login', { email, password });
+            const response = await axios.post('http://localhost:4000/api/users/login', { email, password });
             const { name, id,token } = response.data;
             console.log("response in login",response.data)
             localStorage.setItem('name',(name))
