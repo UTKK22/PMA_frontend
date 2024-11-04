@@ -176,7 +176,7 @@ const DashBoard = () => {
 
     try {
       const response = await axios.put(
-        `https://pma-backend-psi.vercel.app/api/tasks/update_task/state/${taskId}`,
+        `https://pma-backend-lac.vercel.app/api/tasks/update_task/state/${taskId}`,
         updatedTask,
         config
       );
@@ -204,7 +204,7 @@ const DashBoard = () => {
         };
 
         const response = await axios.get(
-          `https://pma-backend-psi.vercel.app/api/tasks/filter?filter=${initialFilter}`,
+          `https://pma-backend-lac.vercel.app/api/tasks/filter?filter=${initialFilter}`,
           config
         );
 
@@ -228,7 +228,7 @@ const DashBoard = () => {
     };
     console.log(config);
     axios
-      .get(`https://pma-backend-psi.vercel.app/api/tasks/filter?filter=${newFilter}`, config)
+      .get(`https://pma-backend-lac.vercel.app/api/tasks/filter?filter=${newFilter}`, config)
       .then((res) => {
         console.log(res.data, "filter");
         setTasks(res.data);
@@ -286,7 +286,7 @@ const DashBoard = () => {
           return task;
         });
       });
-      const url = `https://pma-backend-psi.vercel.app/api/tasks/${taskId}/checklists/${checklistId}`;
+      const url = `https://pma-backend-lac.vercel.app/api/tasks/${taskId}/checklists/${checklistId}`;
 
       const updatedChecklist={ischeck: !ischecked}
 
@@ -436,7 +436,7 @@ const DashBoard = () => {
                             <button
                               onClick={() =>
                                 handleShare(
-                                  `https://pma-frontend-five.vercel.app/sharetask/${task._id}`
+                                  `https://pma-frontend-kohl.vercel.app/sharetask/${task._id}`
                                 )
                               }
                             >
@@ -599,7 +599,7 @@ const DashBoard = () => {
                             <button
                               onClick={() =>
                                 handleShare(
-                                  `https://pma-frontend-five.vercel.app/sharetask/${task._id}`
+                                  `https://pma-frontend-kohl.vercel.app/sharetask/${task._id}`
                                 )
                               }
                             >
@@ -760,7 +760,7 @@ const DashBoard = () => {
                             <button
                               onClick={() =>
                                 handleShare(
-                                  `https://pma-frontend-five.vercel.app/sharetask/${task._id}`
+                                  `https://pma-frontend-kohl.vercel.app/sharetask/${task._id}`
                                 )
                               }
                             >
@@ -917,7 +917,7 @@ const DashBoard = () => {
                             <button
                               onClick={() =>
                                 handleShare(
-                                  `https://pma-frontend-five.vercel.app/sharetask/${task._id}`
+                                  `https://pma-frontend-kohl.vercel.app/sharetask/${task._id}`
                                 )
                               }
                             >
