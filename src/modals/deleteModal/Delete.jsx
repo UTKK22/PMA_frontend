@@ -1,23 +1,16 @@
 import React from 'react';
 import styles from '../deleteModal/Delete.module.css';
 import axios from 'axios';
-import Cookies from 'js-cookie'
+
 axios.defaults.withCredentials = true;
+
 const DeleteModal = ({ closeModal, taskId }) => {
-    // Axios configuration for API calls
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${Cookies.get('token')}`,
-        },
-    };
 
     // Function to handle the deletion of a task
     const handleDelete = async () => {
         try {
             const response = await axios.delete(
-                `https://pma-backend-4yqr.onrender.com/api/tasks/delete_task/${taskId}`,
-                config
+                `https://pma-backend-4yqr.onrender.com/api/tasks/delete_task/${taskId}`
             );
             console.log('Task successfully deleted:', response.data);
             closeModal(false);

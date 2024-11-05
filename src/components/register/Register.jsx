@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { faEnvelope, faLock, faUser, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Cookies from 'js-cookie'
-axios.defaults.withCredentials=true;
+
+axios.defaults.withCredentials = true;
+
 const RegisterForm = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const RegisterForm = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setFormData((prev) => ({ ...prev, [name]: value }));
         if (name === 'confirmPassword') {
             setError(value !== formData.password ? 'Passwords do not match' : '');
         }
@@ -54,22 +55,21 @@ const RegisterForm = () => {
             setError(validationError);
             return;
         }
-        
+
         try {
             const response = await axios.post('https://pma-backend-4yqr.onrender.com/api/users/signup', formData);
-            console.log("response in register",response)
-            Cookies.set("token",response.data.token)
-            localStorage.setItem('name', (response.data.name));
-            localStorage.setItem('id',response.data.id);
+            console.log("response in register", response);
+            localStorage.setItem('name', response.data.name);
+            localStorage.setItem('id', response.data.id);
             notifySuccess();
-            navigate('/login');
+            navigate('/dashboard'); // Directly navigate to dashboard
         } catch (error) {
             console.error('Registration error:', error);
-            setError('Registration failed, please try again.');
+            setError(error.response?.data?.message || 'Registration failed, please try again.');
         }
     };
 
-    const PasswordVisibility = () => {
+    const togglePasswordVisibility = () => {
         setPasswordType(prevType => (prevType === 'password' ? 'text' : 'password'));
         setIcon(prevIcon => (prevIcon === faEye ? faEyeSlash : faEye));
     };
@@ -78,26 +78,55 @@ const RegisterForm = () => {
         <div className={styles.RegisterContainer}>
             <h1 className={styles.RegisterHeader}>Register</h1>
             <form className={styles.RegisterForm} onSubmit={handleSubmit}>
-                {['name', 'email', 'password', 'confirmPassword'].map((field, index) => (
-                    <div className={styles.userInput} key={index}>
-                        <FontAwesomeIcon icon={field === 'email' ? faEnvelope : faLock} className={styles.inputIcon} />
-                        <input
-                            type={field.includes('password') ? passwordType : 'text'}
-                            placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                            name={field}
-                            value={formData[field]}
-                            onChange={handleInputChange}
-                            className={styles.nameInput}
-                        />
-                        {field.includes('password') && (
-                            <FontAwesomeIcon
-                                icon={icon}
-                                className={styles.ToggleIcon}
-                                onClick={PasswordVisibility}
-                            />
-                        )}
-                    </div>
-                ))}
+                <div className={styles.userInput}>
+                    <FontAwesomeIcon icon={faUser} className={styles.inputIcon} />
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className={styles.nameInput}
+                    />
+                </div>
+                <div className={styles.userInput}>
+                    <FontAwesomeIcon icon={faEnvelope} className={styles.inputIcon} />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className={styles.nameInput}
+                    />
+                </div>
+                <div className={styles.userInput}>
+                    <FontAwesomeIcon icon={faLock} className={styles.inputIcon} />
+                    <input
+                        type={passwordType}
+                        placeholder="Password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleInputChange}
+                        className={styles.nameInput}
+                    />
+                    <FontAwesomeIcon
+                        icon={icon}
+                        className={styles.ToggleIcon}
+                        onClick={togglePasswordVisibility}
+                    />
+                </div>
+                <div className={styles.userInput}>
+                    <FontAwesomeIcon icon={faLock} className={styles.inputIcon} />
+                    <input
+                        type={passwordType}
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleInputChange}
+                        className={styles.nameInput}
+                    />
+                </div>
                 {error && <label className={styles.errorMessage}>{error}</label>}
                 <button type="submit" className={styles.submitButton}>
                     Register

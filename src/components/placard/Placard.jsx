@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../placard/Placard.module.css';
+import styles from './Placard.module.css';
 import Astrologo from '../../assets/Astro_logo.png';
 
 const Placard = () => {
@@ -8,7 +8,7 @@ const Placard = () => {
             <div className={styles.circle}></div>
             <img src={Astrologo} className={styles.img} alt="Placard" />
             <h1>Welcome Aboard, My Friend!</h1>
-            <p>Just a couple of clicks, and we’re ready to start.</p>
+            <p>just a couple of clicks and we start.</p>
         </div>
     );
 };

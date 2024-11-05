@@ -7,7 +7,6 @@ const LogoutModal = ({ closeModal }) => {
 
     const handleLogout = (e) => {
         e.preventDefault();
-        localStorage.removeItem('token');
         localStorage.removeItem('name');
         localStorage.removeItem('id');
         Cookies.remove("token");
