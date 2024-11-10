@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../logoutmodal/Logout.module.css';
 import {useNavigate} from 'react-router-dom';
-import Cookies from 'js-cookie'
 const LogoutModal = ({ closeModal }) => {
     const navigate = useNavigate();
 
@@ -9,7 +8,7 @@ const LogoutModal = ({ closeModal }) => {
         e.preventDefault();
         localStorage.removeItem('name');
         localStorage.removeItem('id');
-        Cookies.remove("token");
+        localStorage.removeItem('token')
         navigate('/login');
         window.location.reload();
     };

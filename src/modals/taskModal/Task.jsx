@@ -4,7 +4,6 @@ import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DeleteIcon from "../../assets/Delete.png";
-import Cookies from "js-cookie";
 
 axios.defaults.withCredentials = true;
 
@@ -19,13 +18,13 @@ const TaskModal = ({ closeModal }) => {
     assignee: "",
   });
   const { title, dueDate, assignee, user } = formData;
-  const [selectedPriority, setSelectedPriority] = useState(null);
   const [checkItems, setCheckItems] = useState([
     { text: "", isChecked: false },
   ]);
   const [assignees, setAssignees] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isArrowVisible, setIsArrowVisible] = useState(false);
+  const token = localStorage.getItem('token')
 
   useEffect(() => {
     const fetchAssignees = async () => {
@@ -67,7 +66,7 @@ const TaskModal = ({ closeModal }) => {
       const config = {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${Cookies.get("token")}`,
+          Authorization: `Bearer ${token}`,
         },
       };
       await axios.post(

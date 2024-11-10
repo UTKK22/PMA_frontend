@@ -47,8 +47,9 @@ const Login = () => {
         "https://pma-backend-4yqr.onrender.com/api/users/login",
         { email, password }
       );
-      const { name, id } = response.data;
+      const { name, id, token } = response.data;
       console.log("response in login", response.data);
+      localStorage.setItem("token" , token )
 
       
       localStorage.setItem("name", name);

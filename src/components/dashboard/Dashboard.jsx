@@ -14,11 +14,9 @@ import closeButton from "../../assets/Collapse-all.png";
 import EditModal from "../../modals/editModal/Edit";
 import AddPeople from "../../modals/addpeopleModal/AddPeople";
 import "react-toastify/dist/ReactToastify.css";
-import Cookies from "js-cookie";
 axios.defaults.withCredentials = true;
 const DashBoard = () => {
   const [tasks, setTasks] = useState([]);
-  const [checklist, setChecklist] = useState([]);
   const [authorization, setAuthorization] = useState(false);
   const [isOpen, setIsOpen] = useState(null);
   const [selectedTaskId, setSelectedTaskId] = useState(null);
@@ -30,8 +28,8 @@ const DashBoard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(null);
   const [openTasks, setOpenTasks] = useState({});
   const [editModal, setEditModal] = useState(false);
-  const [completedCount, setCompletedCount] = useState(0);
-  const token = Cookies.get("token");
+  const token = localStorage.getItem('token')
+
   const notify = () => {
     toast("Link Copied ", {
       position: "top-right",
@@ -81,10 +79,6 @@ const DashBoard = () => {
       return " #CF3636";
     }
   };
-
-  useEffect(() => {
-    setAuthorization(!!token);
-  }, [token]);
 
   // useEffect(() => {
   //   const fetchTasks = async () => {
@@ -161,7 +155,6 @@ const DashBoard = () => {
   //   }
   // };
   const updateTaskState = async (newTaskState, taskId) => {
-    const token = Cookies.get("token");
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -200,7 +193,7 @@ const DashBoard = () => {
         const config = {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         };
 
@@ -224,7 +217,7 @@ const DashBoard = () => {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("token")}`,
+        Authorization: `Bearer ${token}`,
       },
     };
     console.log(config);
@@ -264,7 +257,6 @@ const DashBoard = () => {
   };
   const handleCheck = async (taskId, checklistId, ischecked) => {
     try {
-      const token = Cookies.get("token");
       const config = {
         headers: { Authorization: `Bearer ${token}` },
       };
@@ -343,6 +335,10 @@ const DashBoard = () => {
     console.log({ initials });
     return initials;
   };
+
+  useEffect(() => {
+    setAuthorization(!!token);
+  }, [token]);
 
   return (
     <>

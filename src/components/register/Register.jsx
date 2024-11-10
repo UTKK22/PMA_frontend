@@ -59,8 +59,12 @@ const RegisterForm = () => {
         try {
             const response = await axios.post('https://pma-backend-4yqr.onrender.com/api/users/signup', formData);
             console.log("response in register", response);
-            localStorage.setItem('name', response.data.name);
-            localStorage.setItem('id', response.data.id);
+
+            const {token, name, id } = response.data
+
+            localStorage.setItem("token", token)
+            localStorage.setItem('name', name);
+            localStorage.setItem('id', id);
             notifySuccess();
             navigate('/dashboard'); // Directly navigate to dashboard
         } catch (error) {
